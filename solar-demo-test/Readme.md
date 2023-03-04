@@ -1,0 +1,1 @@
+D:\projects\learning\solr-demos\solar-demo-test\testdata\solr
