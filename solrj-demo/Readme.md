@@ -188,3 +188,146 @@ curl -X POST -H  'Content-Type: application/json' 'http://localhost:8983/solr/se
         }
     }
 }'
+
+
+# add a document
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+{
+"add": {
+"doc": {
+"twitter_id" : "2",
+"user_name_string" : "Solr",
+"type_string" : "post",
+"lang_string" : "en",
+"updated_on_pdt" : "2019-12-30T09:30:22Z",
+"likes_count_pint" : 10,
+"text_en" : "Happy Searching!",
+"subject_strings":"index",
+"link_strings" : ["https://github.com/apache/lucene-solr",
+"https://lucene.apache.org/solr/"]
+	    }
+}
+}'
+
+# update a document
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+[{
+"twitter_id" : "2",	    
+"likes_count_pint" : {"set":11}	      
+}]'
+
+curl -X GET "http://localhost:8983/solr/search_twitter/select?q=*:*"
+
+
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+[{
+"twitter_id" : "2",	  
+"likes_count_pint" : {"inc":1},  
+"subject_strings":{"add":["searching","database"]},
+"link_strings":{"remove":"https://github.com/apache/lucene-solr"}        
+}]'
+
+curl -X GET "http://localhost:8983/solr/search_twitter/select?q=*:*"
+
+# get the version of a document using the get request handler
+curl -X GET -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/get?id=2&fl=id,_version_'
+
+
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+[{
+"twitter_id" : "2",	    
+"likes_count_pint" : {"set":13}
+}]'
+
+# add 2 docs that will return the version
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?versions=true&omitHeader=true' --data-binary '
+[ { "twitter_id" : "3" },
+{ "twitter_id" : "4" } ]'
+
+
+## Twitter_Search 
+### create
+
+cd server/solr/configsets
+mkdir search_twitter
+cp -r _default/. search_twitter
+
+# create a solr core with default configs
+curl -X GET 'http://localhost:8983/solr/admin/cores?action=CREATE&name=search_twitter&instanceDir=configsets/search_twitter'
+
+# get current schema fields
+curl -X GET "http://localhost:8983/solr/search_twitter/schema/fields"
+
+# add document to solr
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update' --data-binary '
+{
+"add": {
+"doc": {
+"content":"Late night with Solr 8.5",
+"likes":10
+}
+}
+}'
+
+# get current schema fields
+curl -X GET "http://localhost:8983/solr/search_twitter/schema/fields"
+
+# delete a collection
+curl -X GET 'http://localhost:8983/solr/admin/cores?action=UNLOAD&core=search_twitter&deleteInstanceDir=true&deleteDataDir=true'
+
+
+---
+### crud 
+####  add a document
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+{
+"add": {
+"doc": {
+"twitter_id" : "2",
+"user_name_string" : "Solr",
+"type_string" : "post",
+"lang_string" : "en",
+"updated_on_pdt" : "2019-12-30T09:30:22Z",
+"likes_count_pint" : 10,
+"text_en" : "Happy Searching!",
+"subject_strings":"index",
+"link_strings" : ["https://github.com/apache/lucene-solr",
+"https://lucene.apache.org/solr/"]
+	    }
+}
+}'
+
+#### update a document
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+[{
+"twitter_id" : "2",	    
+"likes_count_pint" : {"set":11}	      
+}]'
+
+curl -X GET "http://localhost:8983/solr/search_twitter/select?q=*:*"
+
+
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+[{
+"twitter_id" : "2",	  
+"likes_count_pint" : {"inc":1},  
+"subject_strings":{"add":["searching","database"]},
+"link_strings":{"remove":"https://github.com/apache/lucene-solr"}        
+}]'
+
+curl -X GET "http://localhost:8983/solr/search_twitter/select?q=*:*"
+
+#### get the version of a document using the get request handler
+curl -X GET -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/get?id=2&fl=id,_version_'
+
+
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+[{
+"twitter_id" : "2",	    
+"likes_count_pint" : {"set":13}
+}]'
+
+#### add 2 docs that will return the version
+curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?versions=true&omitHeader=true' --data-binary '
+[ { "twitter_id" : "3" },
+{ "twitter_id" : "4" } ]'
