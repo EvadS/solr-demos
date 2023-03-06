@@ -169,13 +169,13 @@ https://solr.apache.org/guide/8_11/solr-configuration-files.html
 ```
   ./solr start
 ```
+
+
 http://localhost:8983/solr/admin/cores?action=create&name=search_twitter&instanceDir=configsets/search_twitter
 
-http://localhost:8983/solr/search_twitter/schema
+
 
 Post 
-
-
 http://localhost:8983/solr/search_twitter/update
 
 
@@ -234,23 +234,33 @@ curl -X GET -H 'Content-Type: application/json' 'http://localhost:8983/solr/sear
 
 
 curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
+```
 [{
 "twitter_id" : "2",	    
 "likes_count_pint" : {"set":13}
 }]'
+```
+
 
 # add 2 docs that will return the version
 curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?versions=true&omitHeader=true' --data-binary '
 [ { "twitter_id" : "3" },
 { "twitter_id" : "4" } ]'
-
+------
 
 ## Twitter_Search 
 ### create
-
+```
 cd server/solr/configsets
 mkdir search_twitter
 cp -r _default/. search_twitter
+```
+```
+  ./solr create -c search_twitter -p 8983
+  
+    ./solr -e search_twitter
+``` 
+
 
 # create a solr core with default configs
 curl -X GET 'http://localhost:8983/solr/admin/cores?action=CREATE&name=search_twitter&instanceDir=configsets/search_twitter'
@@ -259,18 +269,22 @@ curl -X GET 'http://localhost:8983/solr/admin/cores?action=CREATE&name=search_tw
 curl -X GET "http://localhost:8983/solr/search_twitter/schema/fields"
 
 # add document to solr
-curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update' --data-binary '
-{
-"add": {
-"doc": {
-"content":"Late night with Solr 8.5",
-"likes":10
-}
-}
-}'
+```
+    curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update' --data-binary '
+    {
+        "add": {
+            "doc": {
+                "content":"Late night with Solr 8.5",
+                "likes":10
+            }
+        }
+    }'
+```
 
 # get current schema fields
-curl -X GET "http://localhost:8983/solr/search_twitter/schema/fields"
+```
+    curl -X GET "http://localhost:8983/solr/search_twitter/schema/fields"
+```
 
 # delete a collection
 curl -X GET 'http://localhost:8983/solr/admin/cores?action=UNLOAD&core=search_twitter&deleteInstanceDir=true&deleteDataDir=true'
@@ -279,6 +293,8 @@ curl -X GET 'http://localhost:8983/solr/admin/cores?action=UNLOAD&core=search_tw
 ---
 ### crud 
 ####  add a document
+
+```
 curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
 {
 "add": {
@@ -296,6 +312,7 @@ curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/sea
 	    }
 }
 }'
+```
 
 #### update a document
 curl -X POST -H 'Content-Type: application/json' 'http://localhost:8983/solr/search_twitter/update?commitWithin=100' --data-binary '
