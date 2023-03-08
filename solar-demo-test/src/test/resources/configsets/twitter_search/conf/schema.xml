@@ -19,14 +19,21 @@
 <schema name="exampleCollection" version="1.6">
 
     <!-- Defined fields -->
-    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" docValues="true" />
-    <field name="content" type="string" indexed="true" stored="true" required="false" multiValued="false" docValues="true" />
+    <field name="id" type="string" indexed="true" stored="true"
+           required="true"
+           multiValued="false"
+           docValues="true" />
+
+    <field name="content" type="string"
+           indexed="true"
+           stored="true"
+           required="false"
+           multiValued="false"
+           docValues="true" />
+
     <field name="likes" type="string" indexed="true" stored="true" required="false" multiValued="false" docValues="true" />
 
-
-
     <uniqueKey>id</uniqueKey>
-
     <!-- Field types -->
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true" />
     <fieldType name="strings" class="solr.StrField" sortMissingLast="true" multiValued="true" docValues="true" />
@@ -87,7 +94,8 @@
         />
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.EnglishPossessiveFilterFactory"/>
-        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+        <filter class="solr.KeywordMarkerFilterFactory"
+                protected="protwords.txt"/>
         <!-- Optionally you may want to use this less aggressive stemmer instead of PorterStemFilterFactory:
         <filter class="solr.EnglishMinimalStemFilterFactory"/>
 	      -->
@@ -105,6 +113,11 @@
 
     <!-- since fields of this type are by default not stored or indexed,
          any data added to them will be ignored outright.  --> 
-    <fieldType name="ignored" stored="false" indexed="false" docValues="false" multiValued="true" class="solr.StrField" />
+    <fieldType name="ignored"
+               stored="false"
+               indexed="false"
+               docValues="false"
+               multiValued="true"
+               class="solr.StrField" />
 
 </schema>
