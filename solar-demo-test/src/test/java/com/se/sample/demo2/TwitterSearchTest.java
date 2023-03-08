@@ -45,8 +45,6 @@ public class TwitterSearchTest {
         logger.info("solrHome: {}",solrHome);
 
         solrClient = EmbeddedSolrServerFactory.create(solrHome, CONFIGSET_DIR, "twitter_search");
-
-
     }
 
 
@@ -122,6 +120,7 @@ public class TwitterSearchTest {
             clearEmbeddedDataBase();
             solrClient.close();
         } catch (Exception e) {
+            logger.error("Embedded solr shutdown error: {}", e);
         }
     }
 

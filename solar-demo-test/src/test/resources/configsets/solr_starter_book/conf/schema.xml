@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+
+<schema name='simple'  version="1.6">
+    <types>
+        <fieldtype name='string' class='solr.StrField' />
+        <fieldType name='long' class='solr.TrieLongField' />
+    </types>
+
+    <!-- Defined fields -->
+    <fields>
+        <field name='id' type='long' required='true' />
+        <field name='author' type='string' multiValued='true' />
+        <field name='title' type='string' />
+        <field name='text' type='string' />
+
+        <dynamicField name='*_string' type='string'
+                      multiValued='true' indexed='true' stored='true' />
+        <copyField source='*' dest='fullText' />
+        <field name='fullText' type='string'
+               multiValued='true' indexed='true' />
+    </fields>
+    <uniqueKey>id</uniqueKey>
+
+</schema>
