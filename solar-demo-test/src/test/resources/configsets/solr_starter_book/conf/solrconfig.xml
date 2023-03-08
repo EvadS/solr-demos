@@ -16,4 +16,10 @@
 
   <requestHandler name="/select" class="solr.SearchHandler" />
   <requestHandler name="/update" class="solr.UpdateRequestHandler" />
+
+  <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
+    <lst name="defaults">
+      <str name="config">data-config.xml</str>
+    </lst>
+  </requestHandler>
 </config>

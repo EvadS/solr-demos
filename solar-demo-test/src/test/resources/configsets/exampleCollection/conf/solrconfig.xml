@@ -33,4 +33,11 @@
   <requestHandler name="/select" class="solr.SearchHandler" />
   <requestHandler name="/update" class="solr.UpdateRequestHandler" />
 
+  <updateHandler class="solr.DirectUpdateHandler2">
+
+  </updateHandler>
+
+
+
+
 </config>

@@ -10,6 +10,17 @@
 ```
     ./solr delete -c collection_name
 ```
+## starter-book index
+
+### create index 
+```bash
+ ./solr create_core -c starter-book
+```
+```bash
+  ./post -c starter-book  starter-book.json
+```
+
+
 https://factorpad.com/tech/solr/tutorial/solr-fields.html
 
 Reference

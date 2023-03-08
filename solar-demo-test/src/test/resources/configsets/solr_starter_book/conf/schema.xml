@@ -15,10 +15,12 @@
 
         <dynamicField name='*_string' type='string'
                       multiValued='true' indexed='true' stored='true' />
+
         <copyField source='*' dest='fullText' />
+
         <field name='fullText' type='string'
                multiValued='true' indexed='true' />
     </fields>
-    <uniqueKey>id</uniqueKey>
 
+    <uniqueKey>id</uniqueKey>
 </schema>
