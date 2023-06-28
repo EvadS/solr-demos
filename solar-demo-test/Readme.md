@@ -1,9 +1,12 @@
-
 # SOLR embedded server tutorial 
 ## Admin page 
 ```http
 http://localhost:8983/solr/#/starter-book/query?q=a3&q.op=OR&indent=true&df=author
 ```
+
+
+## Unit testing with embedded solr 
+
 
 ## Film index 
 

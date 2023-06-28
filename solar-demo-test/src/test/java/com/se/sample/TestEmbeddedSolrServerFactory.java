@@ -91,5 +91,4 @@ public class TestEmbeddedSolrServerFactory {
         Assert.assertNotNull(solrDocuments);
         Assert.assertEquals(5, solrDocuments.getNumFound());
     }
-
 }
