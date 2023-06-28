@@ -9,7 +9,6 @@ import org.apache.solr.client.solrj.impl.XMLResponseParser;
 import org.apache.solr.common.SolrInputDocument;
 
 public class SolrJavaIntegration {
-
     private HttpSolrClient solrClient;
 
     public SolrJavaIntegration(String clientUrl) {

@@ -1,4 +1,7 @@
 ## Solr instance 
+    -[x]SpringBoot
+    -[x]HttpSolrClient 
+    -[x] local solr instance is used for test
 
 ### windows 
 

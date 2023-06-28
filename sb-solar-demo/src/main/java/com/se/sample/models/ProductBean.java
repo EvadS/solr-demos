@@ -3,7 +3,6 @@ package com.se.sample.models;
 import org.apache.solr.client.solrj.beans.Field;
 
 public class ProductBean {
-
     String id;
     String name;
     String price;
