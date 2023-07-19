@@ -78,5 +78,27 @@ public class SolrDemoTest {
         }
     }
 
+    // TODO: united demo
+    @Test
+    public void testUnitedFilterQuery() throws SolrServerException, IOException {
+        String localhost = "http://localhost:8983/solr/films";
+        String host = "http://ips-united-solr.dev.ligaunited.net:8080/solr/collection1";
+        try (SolrClient client =
+                     new HttpSolrClient.Builder(host).build()
+        ) {
+
+            SolrQuery query = new SolrQuery("*:*");
+        //   query.addFilterQuery("genre:\"Superhero movie\"");
+           query.addFilterQuery("_version_:1733414081305509888");
+
+            QueryResponse response = client.query(query);
+            SolrDocumentList solrDocumentList = response.getResults();
+            DocumentObjectBinder binder = new DocumentObjectBinder();
+            List<String> films = binder.getBeans(String.class, solrDocumentList);
+
+            films.forEach(f -> System.out.println(GSON.toJson(f)));
+        }
+    }
+
 
 }

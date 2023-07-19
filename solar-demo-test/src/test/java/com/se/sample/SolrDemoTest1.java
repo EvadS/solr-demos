@@ -34,7 +34,7 @@ public class SolrDemoTest1 {
        }
     }
 
-   // @Test
+    // @Test
     public void  testEmployee(){
 
         EmployeeQuery query = new EmployeeQuery();

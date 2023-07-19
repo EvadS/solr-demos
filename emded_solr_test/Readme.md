@@ -1,0 +1,1 @@
+# Embedded solr for testing 
