@@ -56,7 +56,8 @@ public class EmbeddedSolrServerFactory {
      * @return an EmbeddedSolrServer with a core created for the given coreName
      * @throws IOException
      */
-    public static SolrClient create(final String solrHome, final String configSetHome, final String coreName, final boolean cleanSolrHome)
+    public static SolrClient create(final String solrHome, final String configSetHome, final String coreName,
+                                    final boolean cleanSolrHome)
             throws IOException, SolrServerException {
 
         final File solrHomeDir = new File(solrHome);

@@ -1,0 +1,92 @@
+[
+  {
+    "id":"7d6d41d6-66eb-41cf-b885-63138abd9baa",
+    "isbn":"1987188063",
+    "author":"Савин Валентин Эдуардович",
+    "title":"The Last Enemy",
+    "publisher":"Voyager Books",
+    "genre":"Folklore",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"35c30d89-31f1-4104-9dc2-fa0ca6dcc187",
+    "isbn":"0906251087",
+    "author":"Олег Олегович Павлов",
+    "title":"The Doors of Perception",
+    "publisher":"Emerald Group Publishing",
+    "genre":"Textbook",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"94633de0-a869-4457-86b7-994c1a80bd21",
+    "isbn":"0282832696",
+    "author":"Арсений Шаров",
+    "title":"In a Glass Darkly",
+    "publisher":"Bella Books",
+    "genre":"Fantasy",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"6667d28f-152b-4ce6-a60d-b1f6c4e80756",
+    "isbn":"1014734045",
+    "author":"Макаров Никита",
+    "title":"The Far-Distant Oxus",
+    "publisher":"Leafwood Publishers",
+    "genre":"Western",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"e2afe6fa-be05-466c-a348-2d13739fda8d",
+    "isbn":"1678259225",
+    "author":"Крылов Антон Васильевич",
+    "title":"Tirra Lirra by the River",
+    "publisher":"UCL Press",
+    "genre":"Mythopoeia",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"61187e26-7c6e-459e-bb1c-38b41b8e7772",
+    "isbn":"0005168457",
+    "author":"Денис Геннадьевич Наумов",
+    "title":"To a God Unknown",
+    "publisher":"Kodansha",
+    "genre":"Fiction in verse",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"4e50f213-6c53-47dd-bdda-9e40227a5230",
+    "isbn":"189826662X",
+    "author":"Игнатий Попов",
+    "title":"Look Homeward, Angel",
+    "publisher":"O\u0027Reilly Media",
+    "genre":"Mystery",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"db4b080e-3602-4468-9b4a-2dcc5dc442df",
+    "isbn":"0922042101",
+    "author":"Михайлова Таисия",
+    "title":"A Passage to India",
+    "publisher":"NavPress",
+    "genre":"Mythopoeia",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"f168f773-26db-4dd0-8f50-b5a0730db079",
+    "isbn":"0474750051",
+    "author":"Агафонов Алексей",
+    "title":"Tirra Lirra by the River",
+    "publisher":"Chronicle Books",
+    "genre":"Comic/Graphic Novel",
+    "_text_":"is useful to do development and also validation with dummy data"
+  },
+  {
+    "id":"491b72f4-d593-47cc-bce9-1783ec675437",
+    "isbn":"0963375857",
+    "author":"Селезнева Анжела",
+    "title":"The Moving Finger",
+    "publisher":"Eerdmans Publishing",
+    "genre":"Fable",
+    "_text_":"is useful to do development and also validation with dummy data"
+  }
+]
