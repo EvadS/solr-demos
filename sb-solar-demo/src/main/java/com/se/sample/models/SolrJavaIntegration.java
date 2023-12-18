@@ -23,6 +23,7 @@ public class SolrJavaIntegration {
         solrClient.commit();
     }
 
+
     public void addSolrDocument(String documentId, String itemName, String itemPrice) throws SolrServerException, IOException {
 
         SolrInputDocument document = new SolrInputDocument();
