@@ -1,0 +1,7 @@
+
+логический оператор ИЛИ, чтобы получить документы, содержащие искомое слово,
+в любом из указанных полей.
+```
+q=title_en:harry+OR+description_en:harry+OR+title_
+de:harry+OR+description_de:harry
+```
