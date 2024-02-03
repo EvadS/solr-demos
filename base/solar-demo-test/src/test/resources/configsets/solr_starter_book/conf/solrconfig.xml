@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+  <luceneMatchVersion>6.2.1</luceneMatchVersion>
+
+  <dataDir>${solr.data.dir:}</dataDir>
+
+  <schemaFactory class="ClassicIndexSchemaFactory"/>
+
+  <indexConfig>
+    <lockType>single</lockType>
+  </indexConfig>
+
+  <requestDispatcher handleSelect="false">
+    <httpCaching never304="true" />
+  </requestDispatcher>
+
+  <requestHandler name="/select" class="solr.SearchHandler" />
+  <requestHandler name="/update" class="solr.UpdateRequestHandler" />
+
+  <requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
+    <lst name="defaults">
+      <str name="config">data-config.xml</str>
+    </lst>
+  </requestHandler>
+</config>
