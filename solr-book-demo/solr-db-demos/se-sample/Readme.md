@@ -1,0 +1,1 @@
+There are test data for import to solr cores 

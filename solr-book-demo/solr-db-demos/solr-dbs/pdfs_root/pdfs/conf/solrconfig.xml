@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+   <luceneMatchVersion>LUCENE_45</luceneMatchVersion>
+   
+   <directoryFactory name="DirectoryFactory"
+                      class="${solr.directoryFactory:solr.MMapDirectoryFactory}">
+        <int name="maxChunkSize">1073741824</int>
+        <bool name="preload">true</bool>
+    </directoryFactory>
+	
+   <requestHandler name="standard" class="solr.StandardRequestHandler" default="true" />
+   <requestHandler name="/update" class="solr.UpdateRequestHandler" />
+  
+</config>

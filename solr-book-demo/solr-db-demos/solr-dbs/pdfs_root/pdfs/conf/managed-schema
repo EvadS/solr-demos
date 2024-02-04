@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="simple" version="1.1">
+   <types>
+      <fieldtype name="string" class="solr.StrField" />
+   </types>
+   <fields>
+      <field name="title" type="string" />
+	   <field name="text" type="string" />
+      <dynamicField name="*" type="string" multiValued="true" indexed="true" stored="true" />
+      <copyField source="*" dest="fulltext" />
+      <field name="fullText" type="string" multiValued="true" />
+   </fields> 
+</schema>
