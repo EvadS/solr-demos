@@ -112,11 +112,11 @@ TextField" >
 ```
 <add>
 <doc>
-<field name="id">10</field>
-<field name="text_ua2">Постанова</field>
+<field name="id">14</field>
+<field name="name">appreciate</field>
 </doc>
 <doc>
-<field name="id">11</field>
-<field name="text_ua2">Пастанова</field>
+<field name="id">15</field>
+<field name="name">eppreciate</field>
 </doc>
 </add>
