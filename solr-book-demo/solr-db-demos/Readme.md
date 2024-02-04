@@ -38,6 +38,8 @@ in update handler
 bin/solr.cmd  create -c pdfs 
 ```
 
+
+
 что это ?
 bin/solr -e schemaless
 
