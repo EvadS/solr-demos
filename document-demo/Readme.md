@@ -31,5 +31,7 @@ windows
 ./post -c Solr_sample sample.csv 
 ---------------
 
+Tutorials links
+
 ## https://habr.com/ru/articles/175527/
 ## https://examples.javacodegeeks.com/apache-solr-in-java-using-apache-solrj/
